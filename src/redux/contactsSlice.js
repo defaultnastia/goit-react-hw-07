@@ -1,18 +1,11 @@
 import { faker } from "@faker-js/faker";
 import { createSlice } from "@reduxjs/toolkit";
 import { nanoid } from "nanoid";
-import initialContacts from "../data/initialContacts.json";
-
-// --- in case if the initial state should be empty use this: ---
-// const initialState = {
-//   contacts: {
-//     items: [],
-//   },
-// };
+import { fetchContacts } from "./operations";
 
 const initialState = {
   contacts: {
-    items: initialContacts,
+    items: [],
   },
 };
 
@@ -47,6 +40,11 @@ const contactsSlice = createSlice({
         return { payload: id };
       },
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(fetchContacts.fulfilled, (state, action) => {
+      state.items = action.payload;
+    });
   },
 });
 
