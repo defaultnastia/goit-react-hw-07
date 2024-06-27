@@ -1,0 +1,56 @@
+[
+  {
+    "id": "id-1",
+    "name": "Rosie Simpson",
+    "number": "459-12-56",
+    "avatar": "https://picsum.photos/seed/wmQAzzgV/80/80"
+  },
+  {
+    "id": "id-2",
+    "name": "Hermione Kline",
+    "number": "443-89-12",
+    "avatar": "https://picsum.photos/seed/StGe1yNOl/80/80"
+  },
+  {
+    "id": "id-3",
+    "name": "Eden Clements",
+    "number": "645-17-79",
+    "avatar": "https://picsum.photos/seed/8PSDi/80/80"
+  },
+  {
+    "id": "id-4",
+    "name": "Liza Kudrow",
+    "number": "345-92-20",
+    "avatar": "https://picsum.photos/seed/gpHmFZxEqk/80/80"
+  },
+  {
+    "id": "id-5",
+    "name": "Mariko Rierra",
+    "number": "227-91-26",
+    "avatar": "https://picsum.photos/seed/MXxxNuz/80/80"
+  },
+  {
+    "id": "id-6",
+    "name": "Annie Copeland",
+    "number": "145-09-65",
+    "avatar": "https://picsum.photos/seed/IswOggsLYY/80/80"
+  },
+  {
+    "id": "id-7",
+    "name": "Tom Moory",
+    "number": "547-51-22",
+    "avatar": "https://picsum.photos/seed/mUg4KW/80/80"
+  },
+  {
+    "id": "id-8",
+    "name": "Jen Hopper",
+    "number": "397-78-26",
+    "avatar": "https://picsum.photos/seed/eVCVEhH/80/80"
+  },
+  {
+    "id": "id-9",
+    "name": "Reena Tatle",
+    "number": "925-02-53",
+    "avatar": "https://picsum.photos/seed/bbJTUajUHk/80/80"
+  }
+]
