@@ -24,9 +24,8 @@ ol {
 body {
   display: flex;
   justify-content: center;
-  min-width: 700px;
   min-height: 100vh;
-  max-width: 1280px;
+  width: 1200px;
   padding: 20px;
   margin: auto;
 }

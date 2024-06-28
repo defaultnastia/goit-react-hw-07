@@ -1,7 +1,7 @@
-import { Tooltip } from "react-tooltip";
-import { useDispatch } from "react-redux";
-import css from "./Contact.module.css";
 import { deleteContact } from "../../redux/operations";
+import { useDispatch } from "react-redux";
+import { Tooltip } from "react-tooltip";
+import css from "./Contact.module.css";
 
 const Contact = ({ contact }) => {
   const dispatch = useDispatch();
@@ -23,7 +23,7 @@ const Contact = ({ contact }) => {
       >
         ❌
       </button>
-      <Tooltip id="delete" content="Delete contact" />
+      <Tooltip id="delete" content="Delete contact" place="right" />
     </div>
   );
 };

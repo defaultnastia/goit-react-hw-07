@@ -18,6 +18,7 @@ const SearchBox = () => {
         name="searchbox"
         id={searchFieldId}
         defaultValue={filter}
+        placeholder="Start typing name"
       />
     </div>
   );

@@ -1,11 +1,11 @@
 import { useId } from "react";
+import { addContact } from "../../redux/operations";
 import { Field, Form, Formik, ErrorMessage } from "formik";
+import { faker } from "@faker-js/faker";
 import { InputMask } from "@react-input/mask";
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
 import css from "./ContactForm.module.css";
-import { addContact } from "../../redux/operations";
-import { faker } from "@faker-js/faker";
 
 const initialValues = {
   name: "",
@@ -46,7 +46,6 @@ const ContactForm = () => {
       initialValues={initialValues}
       onSubmit={handleSubmit}
       validationSchema={contactValidationSchema}
-      enableReinitialize
     >
       <Form className={css.addContact} autoComplete="off">
         <label htmlFor={nameFieldId}>Name</label>

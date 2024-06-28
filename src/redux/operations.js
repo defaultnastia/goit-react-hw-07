@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 const mockInstance = axios.create({
   baseURL: "https://667d4741297972455f645a16.mockapi.io/v1",
@@ -12,7 +13,7 @@ export const fetchContacts = createAsyncThunk(
       const { data } = await mockInstance.get("/contacts");
       return data;
     } catch (error) {
-      thunkAPI.rejectWithValue(error.message);
+      return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
@@ -23,8 +24,9 @@ export const addContact = createAsyncThunk(
     try {
       await mockInstance.post("/contacts", contact);
       thunkAPI.dispatch(fetchContacts());
+      toast.success("New contact is added!");
     } catch (error) {
-      thunkAPI.rejectWithValue(error.message);
+      return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
@@ -33,10 +35,11 @@ export const deleteContact = createAsyncThunk(
   "contacts/deleteContact",
   async (id, thunkAPI) => {
     try {
-      await mockInstance.delete(`/contacts/${id}`);
+      const { data } = await mockInstance.delete(`/contacts/${id}`);
       thunkAPI.dispatch(fetchContacts());
+      toast.success(`${data.name}'s contact is deleted!`);
     } catch (error) {
-      thunkAPI.rejectWithValue(error.message);
+      return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
