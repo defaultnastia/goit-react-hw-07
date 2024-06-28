@@ -1,11 +1,14 @@
-import { faker } from "@faker-js/faker";
 import { createSlice } from "@reduxjs/toolkit";
-import { nanoid } from "nanoid";
 import { fetchContacts } from "./operations";
 
 const initialState = {
   contacts: {
     items: [],
+    loading: false,
+    error: null,
+  },
+  filters: {
+    name: "",
   },
 };
 
@@ -13,34 +16,6 @@ const contactsSlice = createSlice({
   name: "contacts",
   initialState: initialState.contacts,
   selectors: { selectContacts: (state) => state.items },
-  reducers: {
-    addContact: {
-      reducer(state, action) {
-        state.items.push(action.payload);
-      },
-      prepare(data) {
-        return {
-          payload: {
-            name: data.name,
-            number: data.number,
-            avatar: faker.image.urlPicsumPhotos({ height: 80, width: 80 }),
-            id: nanoid(),
-          },
-        };
-      },
-    },
-    deleteContact: {
-      reducer(state, action) {
-        const index = state.items.findIndex(
-          (contact) => contact.id === action.payload
-        );
-        state.items.splice(index, 1);
-      },
-      prepare(id) {
-        return { payload: id };
-      },
-    },
-  },
   extraReducers: (builder) => {
     builder.addCase(fetchContacts.fulfilled, (state, action) => {
       state.items = action.payload;
@@ -49,5 +24,4 @@ const contactsSlice = createSlice({
 });
 
 export const contactsReducer = contactsSlice.reducer;
-export const { addContact, deleteContact } = contactsSlice.actions;
 export const { selectContacts } = contactsSlice.selectors;

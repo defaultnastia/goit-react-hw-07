@@ -13,6 +13,12 @@
   }
 }
 
+.contact img {
+  width: 84px;
+  height: 84px;
+  object-fit: cover;
+}
+
 .contactBox {
   display: flex;
   align-items: center;

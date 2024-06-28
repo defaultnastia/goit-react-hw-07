@@ -3,8 +3,9 @@ import { Field, Form, Formik, ErrorMessage } from "formik";
 import { InputMask } from "@react-input/mask";
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
-import { addContact } from "../../redux/contactsSlice";
 import css from "./ContactForm.module.css";
+import { addContact } from "../../redux/operations";
+import { faker } from "@faker-js/faker";
 
 const initialValues = {
   name: "",
@@ -31,6 +32,8 @@ const ContactForm = () => {
 
   const handleSubmit = (values, actions) => {
     values.name = values.name.trim();
+    values.avatar = faker.image.urlPicsumPhotos({ height: 80, width: 80 });
+
     dispatch(addContact(values));
     actions.resetForm();
   };
@@ -43,6 +46,7 @@ const ContactForm = () => {
       initialValues={initialValues}
       onSubmit={handleSubmit}
       validationSchema={contactValidationSchema}
+      enableReinitialize
     >
       <Form className={css.addContact} autoComplete="off">
         <label htmlFor={nameFieldId}>Name</label>

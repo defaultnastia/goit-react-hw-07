@@ -1,7 +1,7 @@
 import { Tooltip } from "react-tooltip";
 import { useDispatch } from "react-redux";
-import { deleteContact } from "../../redux/contactsSlice";
 import css from "./Contact.module.css";
+import { deleteContact } from "../../redux/operations";
 
 const Contact = ({ contact }) => {
   const dispatch = useDispatch();
