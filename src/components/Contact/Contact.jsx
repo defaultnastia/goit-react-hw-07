@@ -1,4 +1,4 @@
-import { deleteContact } from "../../redux/operations";
+import { deleteContact } from "../../redux/contactsOps";
 import { useDispatch } from "react-redux";
 import { Tooltip } from "react-tooltip";
 import css from "./Contact.module.css";

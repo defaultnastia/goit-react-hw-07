@@ -1,5 +1,5 @@
 import { useId } from "react";
-import { addContact } from "../../redux/operations";
+import { addContact } from "../../redux/contactsOps";
 import { Field, Form, Formik, ErrorMessage } from "formik";
 import { faker } from "@faker-js/faker";
 import { InputMask } from "@react-input/mask";

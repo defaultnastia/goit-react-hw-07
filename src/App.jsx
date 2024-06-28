@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { fetchContacts } from "./redux/operations.js";
+import { fetchContacts } from "./redux/contactsOps.js";
 import { selectError, selectLoading } from "./redux/contactsSlice.js";
 import { Toaster } from "react-hot-toast";
 import { HashLoader } from "react-spinners";
